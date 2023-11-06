@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Secret chat allows your freedom -Signup</title>
+	<link rel="stylesheet" href="/static/css/sign_up.css">
+	<link rel="shortcut icon" href="/static/img/tab_icon.png">
+
+</head>
+
+{% if messages %}
+	<script>
+		{% for msg in messages %}
+			alert('{{ msg.message }}');
+		{% endfor %}
+	</script>
+{% endif %}
+
+<body>
+	<div class="loginBox">
+		<h2>signup</h2>
+		<form action="{% url 'signup' %}" method="post">
+			<div class="item">
+				<input name="name" type="text" required>
+				<label>Your username</label>
+			</div>
+            <div class="item">
+				<input name="email" type="text" required>
+				<label>Your email</label>
+			</div>
+			<div class="item">
+				<input name="password" type="password" required>
+				<label>Your password</label>
+			</div>
+            <div class="item">
+				<input name="password_cf" type="password" required>
+				<label>Confirm your password</label>
+			</div>
+			<button class="btn">signup
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="a_div">
+			<a href="{% url 'login' %}" target="_blank" role="button">Log in</a>
+			</div>
+		</form>
+	</div>
+
+</body>
+
+</html>
